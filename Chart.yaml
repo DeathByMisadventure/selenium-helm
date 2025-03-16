@@ -1,0 +1,8 @@
+apiVersion: v2
+appVersion: 4.29.0-20250303
+description: A Helm chart for creating a Selenium grid server in Kubernetes
+home: https://github.com/DeathByMisadventure/selenium-helm
+name: selenium-grid
+type: application
+version: 4.29.0
+dependencies: []

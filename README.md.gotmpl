@@ -1,0 +1,44 @@
+# Selenium-Grid Helm Chart
+
+{{ template "chart.description" . }}
+
+{{ template "chart.versionBadge" . }}{{ template "chart.typeBadge" . }}{{ template "chart.appVersionBadge" . }}
+
+{{ template "chart.homepageLine" . }}
+
+{{ template "chart.requirementsSection" . }}
+
+## Installing the chart
+
+To install the selenium-grid helm chart, you can run:
+
+```bash
+# Clone the project
+git clone https://github.com/seleniumhq/docker-selenium.git
+
+# Install basic grid
+helm install selenium-grid docker-selenium/chart/selenium-grid/.
+
+# Or install full grid (Router, Distributor, EventBus, SessionMap and SessionQueue components separated)
+helm install selenium-grid --set isolateComponents=true docker-selenium/chart/selenium-grid/.
+```
+
+## Updating Selenium-Grid release
+
+Once you have a new chart version, you can update your selenium-grid running:
+
+```bash
+helm upgrade selenium-grid docker-selenium/chart/selenium-grid/.
+```
+
+## Uninstalling Selenium Grid release
+
+To uninstall:
+
+```bash
+helm uninstall selenium-grid
+```
+
+## Configuration
+
+{{ template "chart.valuesSection" . }}
