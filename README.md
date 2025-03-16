@@ -15,10 +15,10 @@ To install the selenium-grid helm chart, you can run:
 git clone https://github.com/seleniumhq/docker-selenium.git
 
 # Install basic grid
-helm install selenium-grid docker-selenium/chart/selenium-grid/.
+helm install selenium-grid .
 
 # Or install full grid (Router, Distributor, EventBus, SessionMap and SessionQueue components separated)
-helm install selenium-grid --set isolateComponents=true docker-selenium/chart/selenium-grid/.
+helm install selenium-grid --set isolateComponents=true .
 ```
 
 ## Updating Selenium-Grid release
@@ -26,7 +26,7 @@ helm install selenium-grid --set isolateComponents=true docker-selenium/chart/se
 Once you have a new chart version, you can update your selenium-grid running:
 
 ```bash
-helm upgrade selenium-grid docker-selenium/chart/selenium-grid/.
+helm upgrade selenium-grid .
 ```
 
 ## Uninstalling Selenium Grid release
@@ -59,7 +59,6 @@ helm uninstall selenium-grid
 | chromeNode.resources | object | `{"limits":{"cpu":"1","memory":"1Gi"},"requests":{"cpu":"1","memory":"1Gi"}}` | Resources for chrome-node container |
 | chromeNode.seleniumPort | int | `5900` | Selenium port (spec.ports[0].targetPort in kubernetes service) |
 | chromeNode.seleniumServicePort | int | `6900` | Selenium port exposed in service (spec.ports[0].port in kubernetes service) |
-| chromeNode.service | object | `{"annotations":{},"enabled":true,"type":"ClusterIP"}` | Service configuration |
 | chromeNode.service.annotations | object | `{}` | Custom annotations for service |
 | chromeNode.service.enabled | bool | `true` | Create a service for node |
 | chromeNode.service.type | string | `"ClusterIP"` | Service type |
@@ -130,7 +129,6 @@ helm uninstall selenium-grid
 | edgeNode.resources | object | `{"limits":{"cpu":"1","memory":"1Gi"},"requests":{"cpu":"1","memory":"1Gi"}}` | Resources for edge-node container |
 | edgeNode.seleniumPort | int | `5900` | Selenium port (spec.ports[0].targetPort in kubernetes service) |
 | edgeNode.seleniumServicePort | int | `6900` | Selenium port exposed in service (spec.ports[0].port in kubernetes service) |
-| edgeNode.service | object | `{"annotations":{},"enabled":true,"type":"ClusterIP"}` | Service configuration |
 | edgeNode.service.annotations | object | `{}` | Custom annotations for service |
 | edgeNode.service.enabled | bool | `true` | Create a service for node |
 | edgeNode.service.type | string | `"ClusterIP"` | Service type |
@@ -149,7 +147,6 @@ helm uninstall selenium-grid
 | firefoxNode.resources | object | `{"limits":{"cpu":"1","memory":"1Gi"},"requests":{"cpu":"1","memory":"1Gi"}}` | Resources for firefox-node container |
 | firefoxNode.seleniumPort | int | `5900` | Selenium port (spec.ports[0].targetPort in kubernetes service) |
 | firefoxNode.seleniumServicePort | int | `6900` | Selenium port exposed in service (spec.ports[0].port in kubernetes service) |
-| firefoxNode.service | object | `{"annotations":{},"enabled":true,"type":"ClusterIP"}` | Service configuration |
 | firefoxNode.service.annotations | object | `{}` | Custom annotations for service |
 | firefoxNode.service.enabled | bool | `true` | Create a service for node |
 | firefoxNode.service.type | string | `"ClusterIP"` | Service type |
