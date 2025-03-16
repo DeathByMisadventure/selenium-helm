@@ -17,10 +17,10 @@ To install the selenium-grid helm chart, you can run:
 git clone https://github.com/seleniumhq/docker-selenium.git
 
 # Install basic grid
-helm install selenium-grid docker-selenium/chart/selenium-grid/.
+helm install selenium-grid .
 
 # Or install full grid (Router, Distributor, EventBus, SessionMap and SessionQueue components separated)
-helm install selenium-grid --set isolateComponents=true docker-selenium/chart/selenium-grid/.
+helm install selenium-grid --set isolateComponents=true .
 ```
 
 ## Updating Selenium-Grid release
@@ -28,7 +28,7 @@ helm install selenium-grid --set isolateComponents=true docker-selenium/chart/se
 Once you have a new chart version, you can update your selenium-grid running:
 
 ```bash
-helm upgrade selenium-grid docker-selenium/chart/selenium-grid/.
+helm upgrade selenium-grid .
 ```
 
 ## Uninstalling Selenium Grid release

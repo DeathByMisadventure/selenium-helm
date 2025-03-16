@@ -43,7 +43,6 @@ helm uninstall selenium-grid
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| busConfigMap | object | `{"annotations":{},"name":"selenium-event-bus-config"}` | ConfigMap that contains SE_EVENT_BUS_HOST, SE_EVENT_BUS_PUBLISH_PORT and SE_EVENT_BUS_SUBSCRIBE_PORT variables |
 | busConfigMap.annotations | object | `{}` | Custom annotations for configmap |
 | busConfigMap.name | string | `"selenium-event-bus-config"` | Name of the configmap |
 | chromeNode.annotations | object | `{}` | Annotations for chrome-node pods |
@@ -65,8 +64,6 @@ helm uninstall selenium-grid
 | chromeNode.service.enabled | bool | `true` | Create a service for node |
 | chromeNode.service.type | string | `"ClusterIP"` | Service type |
 | chromeNode.tolerations | list | `[]` | Tolerations for chrome-node container |
-| components | object | `{"distributor":{"annotations":{},"imageName":"selenium/distributor","imagePullPolicy":"IfNotPresent","nodeSelector":{},"port":5553,"resources":{},"serviceAnnotations":{},"serviceType":"ClusterIP","tolerations":[]},"eventBus":{"annotations":{},"imageName":"selenium/event-bus","imagePullPolicy":"IfNotPresent","nodeSelector":{},"port":5557,"publishPort":4442,"resources":{},"serviceAnnotations":{},"serviceType":"ClusterIP","subscribePort":4443,"tolerations":[]},"extraEnvFrom":null,"extraEnvironmentVariables":null,"router":{"annotations":{},"imageName":"selenium/router","imagePullPolicy":"IfNotPresent","livenessProbe":{"enabled":true,"failureThreshold":10,"initialDelaySeconds":10,"path":"/readyz","periodSeconds":10,"successThreshold":1,"timeoutSeconds":10},"nodeSelector":{},"port":4444,"readinessProbe":{"enabled":true,"failureThreshold":10,"initialDelaySeconds":12,"path":"/readyz","periodSeconds":10,"successThreshold":1,"timeoutSeconds":10},"resources":{},"serviceAnnotations":{},"serviceType":"NodePort","tolerations":[]},"sessionMap":{"annotations":{},"imageName":"selenium/sessions","imagePullPolicy":"IfNotPresent","nodeSelector":{},"port":5556,"resources":{},"serviceAnnotations":{},"serviceType":"ClusterIP","tolerations":[]},"sessionQueue":{"annotations":{},"imageName":"selenium/session-queue","imagePullPolicy":"IfNotPresent","nodeSelector":{},"port":5559,"resources":{},"serviceAnnotations":{},"serviceType":"ClusterIP","tolerations":[]}}` | Configuration for isolated components (applied only if `isolateComponents: true`) |
-| components.distributor | object | `{"annotations":{},"imageName":"selenium/distributor","imagePullPolicy":"IfNotPresent","nodeSelector":{},"port":5553,"resources":{},"serviceAnnotations":{},"serviceType":"ClusterIP","tolerations":[]}` | Configuration for distributor component |
 | components.distributor.annotations | object | `{}` | Custom annotations for Distributor pod |
 | components.distributor.imageName | string | `"selenium/distributor"` | Distributor image name |
 | components.distributor.imagePullPolicy | string | `"IfNotPresent"` | Image pull policy (see https://kubernetes.io/docs/concepts/containers/images/#updating-images) |
@@ -76,7 +73,6 @@ helm uninstall selenium-grid
 | components.distributor.serviceAnnotations | object | `{}` | Custom annotations for Distributor service |
 | components.distributor.serviceType | string | `"ClusterIP"` | Kubernetes service type (see https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types) |
 | components.distributor.tolerations | list | `[]` | Tolerations for Distributor container |
-| components.eventBus | object | `{"annotations":{},"imageName":"selenium/event-bus","imagePullPolicy":"IfNotPresent","nodeSelector":{},"port":5557,"publishPort":4442,"resources":{},"serviceAnnotations":{},"serviceType":"ClusterIP","subscribePort":4443,"tolerations":[]}` | Configuration for Event Bus component |
 | components.eventBus.annotations | object | `{}` | Custom annotations for Event Bus pod |
 | components.eventBus.imageName | string | `"selenium/event-bus"` | Event Bus image name |
 | components.eventBus.imagePullPolicy | string | `"IfNotPresent"` | Image pull policy (see https://kubernetes.io/docs/concepts/containers/images/#updating-images) |
@@ -90,7 +86,6 @@ helm uninstall selenium-grid
 | components.eventBus.tolerations | list | `[]` | Tolerations for Event Bus container |
 | components.extraEnvFrom | string | `nil` | Custom environment variables by sourcing entire configMap, Secret, etc. for all components |
 | components.extraEnvironmentVariables | string | `nil` | Custom environment variables for all components |
-| components.router | object | `{"annotations":{},"imageName":"selenium/router","imagePullPolicy":"IfNotPresent","livenessProbe":{"enabled":true,"failureThreshold":10,"initialDelaySeconds":10,"path":"/readyz","periodSeconds":10,"successThreshold":1,"timeoutSeconds":10},"nodeSelector":{},"port":4444,"readinessProbe":{"enabled":true,"failureThreshold":10,"initialDelaySeconds":12,"path":"/readyz","periodSeconds":10,"successThreshold":1,"timeoutSeconds":10},"resources":{},"serviceAnnotations":{},"serviceType":"NodePort","tolerations":[]}` | Configuration for router component |
 | components.router.annotations | object | `{}` | Custom annotations for router pod |
 | components.router.imageName | string | `"selenium/router"` | Router image name |
 | components.router.imagePullPolicy | string | `"IfNotPresent"` | Image pull policy (see https://kubernetes.io/docs/concepts/containers/images/#updating-images) |
@@ -102,7 +97,6 @@ helm uninstall selenium-grid
 | components.router.serviceAnnotations | object | `{}` | Custom annotations for router service |
 | components.router.serviceType | string | `"NodePort"` | Kubernetes service type (see https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types) |
 | components.router.tolerations | list | `[]` | Tolerations for router container |
-| components.sessionMap | object | `{"annotations":{},"imageName":"selenium/sessions","imagePullPolicy":"IfNotPresent","nodeSelector":{},"port":5556,"resources":{},"serviceAnnotations":{},"serviceType":"ClusterIP","tolerations":[]}` | Configuration for Session Map component |
 | components.sessionMap.annotations | object | `{}` | Custom annotations for Session Map pod |
 | components.sessionMap.imageName | string | `"selenium/sessions"` | Session Map image name |
 | components.sessionMap.imagePullPolicy | string | `"IfNotPresent"` | Image pull policy (see https://kubernetes.io/docs/concepts/containers/images/#updating-images) |
@@ -112,7 +106,6 @@ helm uninstall selenium-grid
 | components.sessionMap.serviceAnnotations | object | `{}` | Custom annotations for Session Map service |
 | components.sessionMap.serviceType | string | `"ClusterIP"` | Kubernetes service type (see https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types) |
 | components.sessionMap.tolerations | list | `[]` | Tolerations for Session Map container |
-| components.sessionQueue | object | `{"annotations":{},"imageName":"selenium/session-queue","imagePullPolicy":"IfNotPresent","nodeSelector":{},"port":5559,"resources":{},"serviceAnnotations":{},"serviceType":"ClusterIP","tolerations":[]}` | Configuration for Session Queue component |
 | components.sessionQueue.annotations | object | `{}` | Custom annotations for Session Queue pod |
 | components.sessionQueue.imageName | string | `"selenium/session-queue"` | Session Queue image name |
 | components.sessionQueue.imagePullPolicy | string | `"IfNotPresent"` | Image pull policy (see https://kubernetes.io/docs/concepts/containers/images/#updating-images) |

@@ -8,17 +8,16 @@ global:
 # -- Deploy Router, Distributor, EventBus, SessionMap and Nodes separately
 isolateComponents: false
 
-# -- ConfigMap that contains SE_EVENT_BUS_HOST, SE_EVENT_BUS_PUBLISH_PORT and SE_EVENT_BUS_SUBSCRIBE_PORT variables
+# ConfigMap that contains SE_EVENT_BUS_HOST, SE_EVENT_BUS_PUBLISH_PORT and SE_EVENT_BUS_SUBSCRIBE_PORT variables
 busConfigMap:
   # -- Name of the configmap
   name: selenium-event-bus-config
   # -- Custom annotations for configmap
   annotations: {}
 
-# -- Configuration for isolated components (applied only if `isolateComponents: true`)
+# Configuration for isolated components (applied only if `isolateComponents: true`)
 components:
-
-  # -- Configuration for router component
+  # Configuration for router component
   router:
     # -- Router image name
     imageName: selenium/router
@@ -60,7 +59,7 @@ components:
     # -- Node selector for router container
     nodeSelector: {}
 
-  # -- Configuration for distributor component
+  # Configuration for distributor component
   distributor:
     # -- Distributor image name
     imageName: selenium/distributor
@@ -84,7 +83,7 @@ components:
     # -- Node selector for Distributor container
     nodeSelector: {}
 
-  # -- Configuration for Event Bus component
+  # Configuration for Event Bus component
   eventBus:
     # -- Event Bus image name
     imageName: selenium/event-bus
@@ -112,7 +111,7 @@ components:
     # -- Node selector for Event Bus container
     nodeSelector: {}
 
-  # -- Configuration for Session Map component
+  # Configuration for Session Map component
   sessionMap:
     # -- Session Map image name
     imageName: selenium/sessions
@@ -136,7 +135,7 @@ components:
     # -- Node selector for Session Map container
     nodeSelector: {}
 
-  # -- Configuration for Session Queue component
+  # Configuration for Session Queue component
   sessionQueue:
     # -- Session Queue image name
     imageName: selenium/session-queue
@@ -289,7 +288,7 @@ chromeNode:
     #   name: proxy-settings
     # - secretRef:
     #   name: mysecret
-  # -- Service configuration
+  # Service configuration
   service:
     # -- Create a service for node
     enabled: true
@@ -350,7 +349,7 @@ firefoxNode:
     #   name: proxy-settings
     # - secretRef:
     #   name: mysecret
-  # -- Service configuration
+  # Service configuration
   service:
     # -- Create a service for node
     enabled: true
@@ -411,7 +410,7 @@ edgeNode:
     #   name: proxy-settings
     # - secretRef:
     #   name: mysecret
-  # -- Service configuration
+  # Service configuration
   service:
     # -- Create a service for node
     enabled: true
