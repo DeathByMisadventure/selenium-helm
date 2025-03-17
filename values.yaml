@@ -256,7 +256,7 @@ hub:
 # Configuration for chrome nodes
 chromeNode:
   # -- Enable chrome nodes
-  enabled: false
+  enabled: true
   # -- Number of chrome nodes
   replicas: 1
   # -- Image of chrome nodes
@@ -328,7 +328,7 @@ firefoxNode:
   # -- Enable firefox nodes
   enabled: true
   # -- Number of firefox nodes
-  replicas: 3
+  replicas: 1
   # -- Image of firefox nodes
   imageName: selenium/node-firefox
   # -- Image of firefox nodes (this overwrites global.seleniumGrid.nodesImageTag)
@@ -396,7 +396,7 @@ firefoxNode:
 # Configuration for edge nodes
 edgeNode:
   # -- Enable edge nodes
-  enabled: false
+  enabled: true
   # -- Number of edge nodes
   replicas: 1
   # -- Image of edge nodes
