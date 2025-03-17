@@ -47,7 +47,7 @@ helm uninstall selenium-grid
 | busConfigMap.name | string | `"selenium-event-bus-config"` | Name of the configmap |
 | chromeNode.annotations | object | `{}` | Annotations for chrome-node pods |
 | chromeNode.dshmVolumeSizeLimit | string | `"1Gi"` | Size limit for DSH volume mounted in container (if not set, default is "1Gi") |
-| chromeNode.enabled | bool | `false` | Enable chrome nodes |
+| chromeNode.enabled | bool | `true` | Enable chrome nodes |
 | chromeNode.extraEnvFrom | string | `nil` | Custom environment variables by sourcing entire configMap, Secret, etc. for chrome nodes |
 | chromeNode.extraEnvironmentVariables | string | `nil` | Custom environment variables for chrome nodes |
 | chromeNode.imageName | string | `"selenium/node-chrome"` | Image of chrome nodes |
@@ -119,7 +119,7 @@ helm uninstall selenium-grid
 | customLabels | object | `{}` | Custom labels for k8s resources |
 | edgeNode.annotations | object | `{}` | Annotations for edge-node pods |
 | edgeNode.dshmVolumeSizeLimit | string | `"1Gi"` | Size limit for DSH volume mounted in container (if not set, default is "1Gi") |
-| edgeNode.enabled | bool | `false` | Enable edge nodes |
+| edgeNode.enabled | bool | `true` | Enable edge nodes |
 | edgeNode.extraEnvFrom | string | `nil` | Custom environment variables by sourcing entire configMap, Secret, etc. for edge nodes |
 | edgeNode.extraEnvironmentVariables | string | `nil` | Custom environment variables for edge nodes |
 | edgeNode.imageName | string | `"selenium/node-edge"` | Image of edge nodes |
@@ -147,7 +147,7 @@ helm uninstall selenium-grid
 | firefoxNode.labels | object | `{}` | Labels for firefox-node pods |
 | firefoxNode.nodeSelector | object | `{}` | Node selector for firefox-node container |
 | firefoxNode.ports | list | `[5553]` | Port list to enable on container |
-| firefoxNode.replicas | int | `3` | Number of firefox nodes |
+| firefoxNode.replicas | int | `1` | Number of firefox nodes |
 | firefoxNode.resources | object | `{"limits":{"cpu":"1","memory":"500Mi"},"requests":{"cpu":".1","memory":"200Mi"}}` | Resources for firefox-node container |
 | firefoxNode.securityContext.allowPrivilegeEscalation | bool | `true` |  |
 | firefoxNode.securityContext.readOnlyRootFilesystem | bool | `false` |  |
