@@ -228,7 +228,22 @@ hub:
     # - secretRef:
     #   name: mysecret
   # -- Resources for selenium-hub container
-  resources: {}
+  resources:
+    requests:
+      memory: "300Mi"
+      cpu: ".5"
+    limits:
+      memory: "500Mi"
+      cpu: "1"
+  securityContext:
+    allowPrivilegeEscalation: true
+    # runAsNonRoot: true
+    readOnlyRootFilesystem: false
+    # capabilities:
+    #   drop:
+    #     - ALL
+    # seccompProfile:
+    #   type: RuntimeDefault
   # -- Kubernetes service type (see https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types)
   serviceType: ClusterIP
   # -- Custom annotations for Selenium Hub service
@@ -264,11 +279,20 @@ chromeNode:
   # -- Resources for chrome-node container
   resources:
     requests:
-      memory: "1Gi"
-      cpu: "1"
+      memory: "200Mi"
+      cpu: ".1"
     limits:
-      memory: "1Gi"
+      memory: "500Mi"
       cpu: "1"
+  securityContext:
+    allowPrivilegeEscalation: true
+    # runAsNonRoot: true
+    readOnlyRootFilesystem: false
+    # capabilities:
+    #   drop:
+    #     - ALL
+    # seccompProfile:
+    #   type: RuntimeDefault
   # -- Tolerations for chrome-node container
   tolerations: []
   # -- Node selector for chrome-node container
@@ -329,11 +353,20 @@ firefoxNode:
   # -- Resources for firefox-node container
   resources:
     requests:
-      memory: "1Gi"
-      cpu: "1"
+      memory: "200Mi"
+      cpu: ".1"
     limits:
-      memory: "1Gi"
+      memory: "500Mi"
       cpu: "1"
+  securityContext:
+    allowPrivilegeEscalation: true
+    # runAsNonRoot: true
+    readOnlyRootFilesystem: false
+    # capabilities:
+    #   drop:
+    #     - ALL
+    # seccompProfile:
+    #   type: RuntimeDefault
   # -- Custom environment variables for firefox nodes
   extraEnvironmentVariables:
     # - name: JAVA_OPTS
@@ -390,11 +423,20 @@ edgeNode:
   # -- Resources for edge-node container
   resources:
     requests:
-      memory: "1Gi"
-      cpu: "1"
+      memory: "200Mi"
+      cpu: ".1"
     limits:
-      memory: "1Gi"
+      memory: "500Mi"
       cpu: "1"
+  securityContext:
+    allowPrivilegeEscalation: true
+    # runAsNonRoot: true
+    readOnlyRootFilesystem: false
+    # capabilities:
+    #   drop:
+    #     - ALL
+    # seccompProfile:
+    #   type: RuntimeDefault
   # -- Custom environment variables for edge nodes
   extraEnvironmentVariables:
     # - name: JAVA_OPTS
