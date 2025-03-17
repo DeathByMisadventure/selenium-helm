@@ -6,6 +6,14 @@ A Helm chart for creating a Selenium grid server in Kubernetes
 
 **Homepage:** <https://github.com/DeathByMisadventure/selenium-helm>
 
+## Why this chart?
+
+The official [Selenium-Grid helm chart](https://github.com/SeleniumHQ/docker-selenium/blob/trunk/charts/selenium-grid/README.md)
+works great of course and is fully featured, with things like autoscaling and other features.  The chart includes 6 different
+helm dependencies.  It's pretty complex.
+
+Don't need all those capabilities?  That's why this chart exists.
+
 ## Installing the chart
 
 To install the selenium-grid helm chart, you can run:
