@@ -238,12 +238,12 @@ hub:
   securityContext:
     allowPrivilegeEscalation: true
     # runAsNonRoot: true
-    readOnlyRootFilesystem: false
-    # capabilities:
-    #   drop:
-    #     - ALL
-    # seccompProfile:
-    #   type: RuntimeDefault
+    readOnlyRootFilesystem: true
+    capabilities:
+      drop:
+        - ALL
+    seccompProfile:
+      type: RuntimeDefault
   # -- Kubernetes service type (see https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types)
   serviceType: ClusterIP
   # -- Custom annotations for Selenium Hub service
@@ -287,12 +287,12 @@ chromeNode:
   securityContext:
     allowPrivilegeEscalation: true
     # runAsNonRoot: true
-    readOnlyRootFilesystem: false
-    # capabilities:
-    #   drop:
-    #     - ALL
-    # seccompProfile:
-    #   type: RuntimeDefault
+    readOnlyRootFilesystem: true
+    capabilities:
+      drop:
+        - ALL
+    seccompProfile:
+      type: RuntimeDefault
   # -- Tolerations for chrome-node container
   tolerations: []
   # -- Node selector for chrome-node container
@@ -361,12 +361,12 @@ firefoxNode:
   securityContext:
     allowPrivilegeEscalation: true
     # runAsNonRoot: true
-    readOnlyRootFilesystem: false
-    # capabilities:
-    #   drop:
-    #     - ALL
-    # seccompProfile:
-    #   type: RuntimeDefault
+    readOnlyRootFilesystem: true
+    capabilities:
+      drop:
+        - ALL
+    seccompProfile:
+      type: RuntimeDefault
   # -- Custom environment variables for firefox nodes
   extraEnvironmentVariables:
     # - name: JAVA_OPTS
@@ -431,12 +431,12 @@ edgeNode:
   securityContext:
     allowPrivilegeEscalation: true
     # runAsNonRoot: true
-    readOnlyRootFilesystem: false
-    # capabilities:
-    #   drop:
-    #     - ALL
-    # seccompProfile:
-    #   type: RuntimeDefault
+    readOnlyRootFilesystem: true
+    capabilities:
+      drop:
+        - ALL
+    seccompProfile:
+      type: RuntimeDefault
   # -- Custom environment variables for edge nodes
   extraEnvironmentVariables:
     # - name: JAVA_OPTS
