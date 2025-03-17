@@ -56,7 +56,9 @@ helm uninstall selenium-grid
 | chromeNode.nodeSelector | object | `{}` | Node selector for chrome-node container |
 | chromeNode.ports | list | `[5553]` | Port list to enable on container |
 | chromeNode.replicas | int | `1` | Number of chrome nodes |
-| chromeNode.resources | object | `{"limits":{"cpu":"1","memory":"1Gi"},"requests":{"cpu":"1","memory":"1Gi"}}` | Resources for chrome-node container |
+| chromeNode.resources | object | `{"limits":{"cpu":"1","memory":"500Mi"},"requests":{"cpu":".1","memory":"200Mi"}}` | Resources for chrome-node container |
+| chromeNode.securityContext.allowPrivilegeEscalation | bool | `true` |  |
+| chromeNode.securityContext.readOnlyRootFilesystem | bool | `false` |  |
 | chromeNode.seleniumPort | int | `5900` | Selenium port (spec.ports[0].targetPort in kubernetes service) |
 | chromeNode.seleniumServicePort | int | `6900` | Selenium port exposed in service (spec.ports[0].port in kubernetes service) |
 | chromeNode.service.annotations | object | `{}` | Custom annotations for service |
@@ -126,7 +128,9 @@ helm uninstall selenium-grid
 | edgeNode.nodeSelector | object | `{}` | Node selector for edge-node container |
 | edgeNode.ports | list | `[5553]` | Port list to enable on container |
 | edgeNode.replicas | int | `1` | Number of edge nodes |
-| edgeNode.resources | object | `{"limits":{"cpu":"1","memory":"1Gi"},"requests":{"cpu":"1","memory":"1Gi"}}` | Resources for edge-node container |
+| edgeNode.resources | object | `{"limits":{"cpu":"1","memory":"500Mi"},"requests":{"cpu":".1","memory":"200Mi"}}` | Resources for edge-node container |
+| edgeNode.securityContext.allowPrivilegeEscalation | bool | `true` |  |
+| edgeNode.securityContext.readOnlyRootFilesystem | bool | `false` |  |
 | edgeNode.seleniumPort | int | `5900` | Selenium port (spec.ports[0].targetPort in kubernetes service) |
 | edgeNode.seleniumServicePort | int | `6900` | Selenium port exposed in service (spec.ports[0].port in kubernetes service) |
 | edgeNode.service.annotations | object | `{}` | Custom annotations for service |
@@ -144,7 +148,9 @@ helm uninstall selenium-grid
 | firefoxNode.nodeSelector | object | `{}` | Node selector for firefox-node container |
 | firefoxNode.ports | list | `[5553]` | Port list to enable on container |
 | firefoxNode.replicas | int | `3` | Number of firefox nodes |
-| firefoxNode.resources | object | `{"limits":{"cpu":"1","memory":"1Gi"},"requests":{"cpu":"1","memory":"1Gi"}}` | Resources for firefox-node container |
+| firefoxNode.resources | object | `{"limits":{"cpu":"1","memory":"500Mi"},"requests":{"cpu":".1","memory":"200Mi"}}` | Resources for firefox-node container |
+| firefoxNode.securityContext.allowPrivilegeEscalation | bool | `true` |  |
+| firefoxNode.securityContext.readOnlyRootFilesystem | bool | `false` |  |
 | firefoxNode.seleniumPort | int | `5900` | Selenium port (spec.ports[0].targetPort in kubernetes service) |
 | firefoxNode.seleniumServicePort | int | `6900` | Selenium port exposed in service (spec.ports[0].port in kubernetes service) |
 | firefoxNode.service.annotations | object | `{}` | Custom annotations for service |
@@ -164,7 +170,9 @@ helm uninstall selenium-grid
 | hub.port | int | `4444` | Selenium Hub port |
 | hub.publishPort | int | `4442` | Port where events are published |
 | hub.readinessProbe | object | `{"enabled":true,"failureThreshold":10,"initialDelaySeconds":12,"path":"/readyz","periodSeconds":10,"successThreshold":1,"timeoutSeconds":10}` | Readiness probe settings |
-| hub.resources | object | `{}` | Resources for selenium-hub container |
+| hub.resources | object | `{"limits":{"cpu":"1","memory":"500Mi"},"requests":{"cpu":".5","memory":"300Mi"}}` | Resources for selenium-hub container |
+| hub.securityContext.allowPrivilegeEscalation | bool | `true` |  |
+| hub.securityContext.readOnlyRootFilesystem | bool | `false` |  |
 | hub.serviceAnnotations | object | `{}` | Custom annotations for Selenium Hub service |
 | hub.serviceType | string | `"ClusterIP"` | Kubernetes service type (see https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types) |
 | hub.subscribePort | int | `4443` | Port where to subscribe for events |
