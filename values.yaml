@@ -236,8 +236,8 @@ hub:
       memory: "500Mi"
       cpu: "1"
   securityContext:
-    allowPrivilegeEscalation: true
-    # runAsNonRoot: true
+    allowPrivilegeEscalation: false
+    runAsNonRoot: true
     readOnlyRootFilesystem: false
     capabilities:
       drop:
@@ -285,8 +285,8 @@ chromeNode:
       memory: "500Mi"
       cpu: "1"
   securityContext:
-    allowPrivilegeEscalation: true
-    # runAsNonRoot: true
+    allowPrivilegeEscalation: false
+    runAsNonRoot: true
     readOnlyRootFilesystem: false
     capabilities:
       drop:
@@ -359,8 +359,8 @@ firefoxNode:
       memory: "500Mi"
       cpu: "1"
   securityContext:
-    allowPrivilegeEscalation: true
-    # runAsNonRoot: true
+    allowPrivilegeEscalation: false
+    runAsNonRoot: true
     readOnlyRootFilesystem: false
     capabilities:
       drop:
@@ -429,8 +429,8 @@ edgeNode:
       memory: "500Mi"
       cpu: "1"
   securityContext:
-    allowPrivilegeEscalation: true
-    # runAsNonRoot: true
+    allowPrivilegeEscalation: false
+    runAsNonRoot: true
     readOnlyRootFilesystem: false
     capabilities:
       drop:
