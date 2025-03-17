@@ -57,9 +57,10 @@ helm uninstall selenium-grid
 | chromeNode.ports | list | `[5553]` | Port list to enable on container |
 | chromeNode.replicas | int | `1` | Number of chrome nodes |
 | chromeNode.resources | object | `{"limits":{"cpu":"1","memory":"500Mi"},"requests":{"cpu":".1","memory":"200Mi"}}` | Resources for chrome-node container |
-| chromeNode.securityContext.allowPrivilegeEscalation | bool | `true` |  |
+| chromeNode.securityContext.allowPrivilegeEscalation | bool | `false` |  |
 | chromeNode.securityContext.capabilities.drop[0] | string | `"ALL"` |  |
 | chromeNode.securityContext.readOnlyRootFilesystem | bool | `false` |  |
+| chromeNode.securityContext.runAsNonRoot | bool | `true` |  |
 | chromeNode.securityContext.seccompProfile.type | string | `"RuntimeDefault"` |  |
 | chromeNode.seleniumPort | int | `5900` | Selenium port (spec.ports[0].targetPort in kubernetes service) |
 | chromeNode.seleniumServicePort | int | `6900` | Selenium port exposed in service (spec.ports[0].port in kubernetes service) |
@@ -131,9 +132,10 @@ helm uninstall selenium-grid
 | edgeNode.ports | list | `[5553]` | Port list to enable on container |
 | edgeNode.replicas | int | `1` | Number of edge nodes |
 | edgeNode.resources | object | `{"limits":{"cpu":"1","memory":"500Mi"},"requests":{"cpu":".1","memory":"200Mi"}}` | Resources for edge-node container |
-| edgeNode.securityContext.allowPrivilegeEscalation | bool | `true` |  |
+| edgeNode.securityContext.allowPrivilegeEscalation | bool | `false` |  |
 | edgeNode.securityContext.capabilities.drop[0] | string | `"ALL"` |  |
 | edgeNode.securityContext.readOnlyRootFilesystem | bool | `false` |  |
+| edgeNode.securityContext.runAsNonRoot | bool | `true` |  |
 | edgeNode.securityContext.seccompProfile.type | string | `"RuntimeDefault"` |  |
 | edgeNode.seleniumPort | int | `5900` | Selenium port (spec.ports[0].targetPort in kubernetes service) |
 | edgeNode.seleniumServicePort | int | `6900` | Selenium port exposed in service (spec.ports[0].port in kubernetes service) |
@@ -153,9 +155,10 @@ helm uninstall selenium-grid
 | firefoxNode.ports | list | `[5553]` | Port list to enable on container |
 | firefoxNode.replicas | int | `1` | Number of firefox nodes |
 | firefoxNode.resources | object | `{"limits":{"cpu":"1","memory":"500Mi"},"requests":{"cpu":".1","memory":"200Mi"}}` | Resources for firefox-node container |
-| firefoxNode.securityContext.allowPrivilegeEscalation | bool | `true` |  |
+| firefoxNode.securityContext.allowPrivilegeEscalation | bool | `false` |  |
 | firefoxNode.securityContext.capabilities.drop[0] | string | `"ALL"` |  |
 | firefoxNode.securityContext.readOnlyRootFilesystem | bool | `false` |  |
+| firefoxNode.securityContext.runAsNonRoot | bool | `true` |  |
 | firefoxNode.securityContext.seccompProfile.type | string | `"RuntimeDefault"` |  |
 | firefoxNode.seleniumPort | int | `5900` | Selenium port (spec.ports[0].targetPort in kubernetes service) |
 | firefoxNode.seleniumServicePort | int | `6900` | Selenium port exposed in service (spec.ports[0].port in kubernetes service) |
@@ -177,9 +180,10 @@ helm uninstall selenium-grid
 | hub.publishPort | int | `4442` | Port where events are published |
 | hub.readinessProbe | object | `{"enabled":true,"failureThreshold":10,"initialDelaySeconds":12,"path":"/readyz","periodSeconds":10,"successThreshold":1,"timeoutSeconds":10}` | Readiness probe settings |
 | hub.resources | object | `{"limits":{"cpu":"1","memory":"500Mi"},"requests":{"cpu":".5","memory":"300Mi"}}` | Resources for selenium-hub container |
-| hub.securityContext.allowPrivilegeEscalation | bool | `true` |  |
+| hub.securityContext.allowPrivilegeEscalation | bool | `false` |  |
 | hub.securityContext.capabilities.drop[0] | string | `"ALL"` |  |
 | hub.securityContext.readOnlyRootFilesystem | bool | `false` |  |
+| hub.securityContext.runAsNonRoot | bool | `true` |  |
 | hub.securityContext.seccompProfile.type | string | `"RuntimeDefault"` |  |
 | hub.serviceAnnotations | object | `{}` | Custom annotations for Selenium Hub service |
 | hub.serviceType | string | `"ClusterIP"` | Kubernetes service type (see https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types) |
