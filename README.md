@@ -200,7 +200,7 @@ helm uninstall selenium-grid
 | ingress.annotations | object | `{}` | Additional ingress annotations |
 | ingress.className | string | `"nginx"` | Ingress class type |
 | ingress.enabled | bool | `true` | Enable ingress |
-| ingress.hosts[0] | string | `"selenium-hub.localdev.me"` |  |
+| ingress.hostname | string | `"selenium-hub.localdev.me"` |  |
 | ingress.path | string | `"/"` |  |
 | ingress.tls | list | `[]` |  |
 | isolateComponents | bool | `false` | Deploy Router, Distributor, EventBus, SessionMap and Nodes separately |
