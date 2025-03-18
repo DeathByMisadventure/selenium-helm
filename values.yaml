@@ -477,8 +477,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   path: /
-  hosts:
-    - selenium-hub.localdev.me
+  hostname: selenium-hub.localdev.me
   tls: []
   #  - secretName: selenium-hub-tls
   #    hosts:

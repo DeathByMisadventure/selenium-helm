@@ -17,6 +17,7 @@ metadata:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
+  ingressClassName: {{ .Values.ingress.className }}
 {{- if .Values.ingress.tls }}
   tls:
   {{- range .Values.ingress.tls }}
@@ -28,8 +29,7 @@ spec:
   {{- end }}
 {{- end }}
   rules:
-  {{- range .Values.ingress.hosts }}
-    - host: {{ . | quote }}
+    - host: {{ .Values.ingress.hostname }}
       http:
         paths:
           - path: {{ $ingressPath }}
@@ -39,5 +39,4 @@ spec:
                 name: {{ $fullName }}
                 port:
                   name: http-hub
-  {{- end }}
 {{- end }}
