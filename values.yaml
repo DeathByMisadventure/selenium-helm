@@ -1,9 +1,9 @@
 global:
   seleniumGrid:
     # -- Image tag for all selenium components
-    imageTag: 4.31
+    imageTag: "4.31"
     # -- Image tag for browser's nodes
-    nodesImageTag: 4.31
+    nodesImageTag: "4.31"
 
 # -- Deploy Router, Distributor, EventBus, SessionMap and Nodes separately
 isolateComponents: false
