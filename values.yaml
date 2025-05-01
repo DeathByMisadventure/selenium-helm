@@ -1,9 +1,9 @@
 global:
   seleniumGrid:
     # -- Image tag for all selenium components
-    imageTag: latest
+    imageTag: 4.31
     # -- Image tag for browser's nodes
-    nodesImageTag: latest
+    nodesImageTag: 4.31
 
 # -- Deploy Router, Distributor, EventBus, SessionMap and Nodes separately
 isolateComponents: false
@@ -259,6 +259,10 @@ chromeNode:
   enabled: true
   # -- Number of chrome nodes
   replicas: 1
+  # -- Use HorizontalPodAutoscaler
+  enableHPA: "true"
+  # -- Max number of nodes in HorizontalPodAutoscaler
+  maxNodesHPA: 3
   # -- Image of chrome nodes
   imageName: selenium/node-chrome
   # -- Image of chrome nodes (this overwrites global.seleniumGrid.nodesImageTag)
@@ -282,7 +286,7 @@ chromeNode:
       memory: "200Mi"
       cpu: ".1"
     limits:
-      memory: "500Mi"
+      memory: "4000Mi"
       cpu: "1"
   securityContext:
     allowPrivilegeEscalation: false
@@ -329,6 +333,10 @@ firefoxNode:
   enabled: true
   # -- Number of firefox nodes
   replicas: 1
+  # -- Use HorizontalPodAutoscaler
+  enableHPA: "true"
+  # -- Max number of nodes in HorizontalPodAutoscaler
+  maxNodesHPA: 3
   # -- Image of firefox nodes
   imageName: selenium/node-firefox
   # -- Image of firefox nodes (this overwrites global.seleniumGrid.nodesImageTag)
@@ -356,7 +364,7 @@ firefoxNode:
       memory: "200Mi"
       cpu: ".1"
     limits:
-      memory: "500Mi"
+      memory: "4000Mi"
       cpu: "1"
   securityContext:
     allowPrivilegeEscalation: false
@@ -399,6 +407,10 @@ edgeNode:
   enabled: true
   # -- Number of edge nodes
   replicas: 1
+  # -- Use HorizontalPodAutoscaler
+  enableHPA: "true"
+  # -- Max number of nodes in HorizontalPodAutoscaler
+  maxNodesHPA: 3
   # -- Image of edge nodes
   imageName: selenium/node-edge
   # -- Image of edge nodes (this overwrites global.seleniumGrid.nodesImageTag)
@@ -426,7 +438,7 @@ edgeNode:
       memory: "200Mi"
       cpu: ".1"
     limits:
-      memory: "500Mi"
+      memory: "4000Mi"
       cpu: "1"
   securityContext:
     allowPrivilegeEscalation: false
